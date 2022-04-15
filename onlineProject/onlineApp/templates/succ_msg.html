@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Well Done!! </h1>
+    <div class="fieldWrapper">
+
+      <p> Detected Face </p>
+      <img src="/static/output/output.png" alt="Detected Face">
+      <h1>{{success}}</h1>
+
+    <a  href="{% url 'onlineApp:data' %}">Pay</a>
+</div>
+{% endblock %}

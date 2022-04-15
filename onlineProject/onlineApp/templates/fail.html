@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block body-content %}
+{% load staticfiles %}
+
+    <h1>Someting went wrong</h1>
+    <a  href="{% url 'onlineApp:data' %}">Try again</a>
+{% endblock %}

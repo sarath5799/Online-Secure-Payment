@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Well Done! </h1>
+    <div class="fieldWrapper">
+
+    {% if success == 1%}
+      <h1>Congratulations!</h1>
+      <h2>{{foldername}} has taken 20 sample photos for Training , Thank you</h2>
+      <a  href="{% url 'trainApp:face' %}">Step2: Extract your Face</a>
+
+    {% elif success == "suc" %}
+      <h1>Face Extracted sucessfully</h1>
+      <a  href="{% url 'trainApp:embed' %}">Step3: Get embedding</a>
+    {%elif success == "suc1" %}
+      <h1>Face Embedding has completed successfully</h1>
+        <a  href="{% url 'trainApp:svc' %}">Step4: Create Model/a>
+    {%elif success == "suc2" %}
+      <h1>Model has been Successfully saved</h1>
+
+    {%else%}
+      <h1>{{foldername}}, Sorry something went worng, please try again</h1>
+    {%endif%}
+
+
+
+
+</div>
+{% endblock %}

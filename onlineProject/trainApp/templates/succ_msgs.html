@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Well Done!! </h1>
+    <div class="fieldWrapper">
+
+    {% if success == 1%}
+      <h1>Congraluation!</h1>
+      <h2>{{foldername}} has taken the 20 sample foto for Training . Thank you</h2>
+    {%else%}
+      <h1>{{foldername}}, Sorry something went worng, please try again</h1>
+    {%endif%}
+
+    <a  href="{% url 'trainApp:traindata' %}">Add your face</a>
+</div>
+{% endblock %}

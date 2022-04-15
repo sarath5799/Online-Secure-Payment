@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load staticfiles %}
+  
+    <h1>The result are</h1>
+
+
+      <p>Accuracy: {{Accuracy}}</p>
+
+
+      <table class="table">
+            <tr>
+              <th>Glucose_concentration</th>
+              <th>Body Mass Index</th>
+              <th>Age</th>
+              <th>Actual value</th>
+              <th>predicted value</th>
+            </tr>
+            {% for id,glucose,bmi,age,actual,predicted in output.itertuples %}
+
+
+            <tr>
+              <td>{{glucose}}</td>
+              <td> {{bmi}}</td>
+              <td>{{age}}</td>
+              <td>{{actual}} </td>
+              <td>{{predicted}}</td>
+            </tr>
+
+            {% endfor%}
+
+      </table>
+
+
+{% endblock %}
